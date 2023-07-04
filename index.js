@@ -1,1 +1,10 @@
-ReactDOM.render(<h1>Hi, my name is Rob</h1>, document.getElementById('root'));
+// let items = ['bacon', 'groceries', 'chipotle'];
+// items.forEach((item) => {
+//   let list = document.createElement('li');
+
+// })
+
+ReactDOM.render(
+<ul><li>Bacon</li><li>Chicken</li><li>Ranch</li></ul>,
+document.getElementById('root')
+);
