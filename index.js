@@ -1,26 +1,15 @@
-// function MainContent () {
-//   return (
-//       <h1>eatWhere</h1>
-//   )
-// }
-
-// let h1 = document.createElement('h1');
-// h1.className = 'header';
-// h1.textContent = 'Hello, React!';
-// console.log(h1);
-
-const navbar = (
-  <nav>
+const page = (
+  <div>
     <h1 className='header'>eatWhere</h1>
     <ul>
       <li>About</li>
       <li>Pricing</li>
       <li>Contact</li>
     </ul>
-  </nav>
+  </div>
 )
 
 ReactDOM.render(
-  navbar,
+  page,
   document.getElementById('root')
 );
