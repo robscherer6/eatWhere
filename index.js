@@ -1,15 +1,20 @@
 function Page() {
   return (
     <div>
-      <img src="./react-logo.png" alt="" width='40px'/>
-      <h1>Fun facts about React</h1>
+      <header>
+        <nav>
+          <img src="./react-logo.png" alt="" width='40px'/>
+        </nav>
+      </header>
+      <h1>Reasons I am excited to learn React</h1>
       <ol>
-        <li>Was first released in 2013</li>
-        <li>Was originally created by Jordan Walke</li>
-        <li>Has well over 100k stars on Github</li>
-        <li>Is maintained by Facebook</li>
-        <li>Powers thousands of enterprise apps, including mobile apps</li>
+        <li>I need to use it for my personal portfolio project</li>
+        <li>I believe it will make me more employable</li>
+        <li>It is always exciting learning new things</li>
       </ol>
+      <footer>
+        © 2023 Scherer development. All rights reserved.
+      </footer>
     </div>
   )
 }
