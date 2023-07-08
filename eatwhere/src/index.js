@@ -1,7 +1,9 @@
-import React from 'react'
+//import React from 'react'
 import ReactDOM from 'react-dom'
+import './styles.css'
+import App from './App'
 
 ReactDOM.render (
-  <h1>Hello, Create React App</h1>,
+  <App />,
   document.getElementById('root')
 )
