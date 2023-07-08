@@ -1,6 +1,10 @@
 function Navbar() {
   return (
-    <h1>Navbar</h1>
+    <nav>
+      <img src="../src/images/react-logo.png" alt="" />
+      <h3>eatWhere</h3>
+      <h4>Help Me Choose</h4>
+    </nav>
   )
 }
 
