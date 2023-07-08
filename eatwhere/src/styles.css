@@ -5,6 +5,7 @@
 
 body {
   margin: 0;
+  background-color: #282D35;
 }
 
 nav{
@@ -34,4 +35,29 @@ nav{
 .nav--icon{
   height: 50px;
   margin-right: 7px;
+}
+
+main{
+  padding: 57px 27px;
+  color: white;
+}
+
+.main--title {
+  margin: 0;
+  font-size: 39px;
+  letter-spacing: -0.05em;
+}
+
+.list{
+  margin-top: 46px;
+}
+
+.list > li {
+  line-height: 19px;
+  padding-block: 10px;
+}
+
+.list > li::marker{
+  font-size: 1.4remg;
+  color: #61DAFB;
 }
