@@ -15,18 +15,23 @@ nav{
   padding: 30px 25px;
 }
 
-nav > h3, nav > h4 {
+.nav--title, .nav--option {
   margin: 0;
 }
 
-nav > h3 {
+.nav--title {
   margin-right: auto;
   color: #61DAFB;
   font-weight: 700;
   font-size: 22px;
 }
 
-nav > h4 {
+.nav--option {
   color: #DEEBF8;
   font-weight: 600;
+}
+
+.nav--icon{
+  height: 50px;
+  margin-right: 7px;
 }
