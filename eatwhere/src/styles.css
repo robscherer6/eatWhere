@@ -107,3 +107,8 @@ section {
 .card--star {
   height: 14px;
 }
+
+.lazy-pic {
+  width: 50%;
+  border-radius: 9px;
+}

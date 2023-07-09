@@ -3,6 +3,7 @@ import Main from './components/Main'
 import Hero from './components/Hero'
 import Card from './components/Card'
 import Contact from './components/Contact'
+import img from './images/lazyFish.png'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       <Main />
       <Card />
       <Contact
-        img="./images/lazyFish.png"
+        img={img}
         name="Lazy Fish"
         phone="(240) 372-1234"
         email="lazyfish@lazy.com"
