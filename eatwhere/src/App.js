@@ -4,8 +4,10 @@ import Hero from './components/Hero'
 import Card from './components/Card'
 import Contact from './components/Contact'
 import img from './images/lazyFish.png'
+import restaurantData from './data/restaurantData'
 
 function App() {
+  console.log(restaurantData);
 
   return (
     <div>

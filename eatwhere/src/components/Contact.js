@@ -1,15 +1,15 @@
-function Contact({img, name, phone, email}) {
+function Contact(props) {
   return (
     <div className="contact-card">
-      <img src={img} alt="" className="lazy-pic"/>
-      <h3>{name}</h3>
+      <img src={props.img} alt="" className="lazy-pic"/>
+      <h3>{props.name}</h3>
       <div className="info-group">
         <img src="" alt="phone" />
-        <p>{phone}</p>
+        <p>{props.phone}</p>
       </div>
       <div className="info-group">
         <img src="" alt="email" />
-        <p>{email}</p>
+        <p>{props.email}</p>
       </div>
     </div>
   )
