@@ -2,20 +2,24 @@ import Navbar from './components/Navbar'
 import Main from './components/Main'
 import Hero from './components/Hero'
 import Card from './components/Card'
-import Contact from './components/Contact'
-import img from './images/lazyFish.png'
+//import Contact from './components/Contact'
+//import img from './images/lazyFish.png'
 import restaurantData from './data/restaurantData'
 
 function App() {
-  console.log(restaurantData);
+  const restaurantElements = restaurantData.map((rest) => {
+    return <div>
+            <Card rating={rest.rating} name={rest.name} address={rest.adddress} />
+    </div>
+  })
 
   return (
     <div>
       <Navbar />
       <Hero />
       <Main />
-      <Card />
-      <Contact
+      {restaurantElements}
+      {/* <Contact
         img={img}
         name="Lazy Fish"
         phone="(240) 372-1234"
@@ -38,7 +42,7 @@ function App() {
         name="Chipotle"
         phone="(555) 123-1234"
         email="chipotle@chipotle.com"
-      />
+      /> */}
     </div>
   )
 }
