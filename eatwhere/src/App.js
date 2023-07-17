@@ -9,7 +9,9 @@ import restaurantData from './data/restaurantData'
 function App() {
   const restaurantElements = restaurantData.map((rest) => {
     return <div>
-            <Card rating={rest.rating} name={rest.name} address={rest.adddress} />
+            <Card key={rest.id} rating={rest.rating} name={rest.name}
+            address={rest.adddress} website={rest.URL} foodType={rest.type_of_food}
+            reviewCount={rest.reviewCount} openSpots={rest.openSpots}/>
     </div>
   })
 

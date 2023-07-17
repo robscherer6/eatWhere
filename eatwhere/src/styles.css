@@ -92,6 +92,7 @@ section {
   font-size: 12px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .card-image {
@@ -111,4 +112,15 @@ section {
 .lazy-pic {
   width: 50%;
   border-radius: 9px;
+}
+
+.card-badge {
+  color: black;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
