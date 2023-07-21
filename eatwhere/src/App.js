@@ -7,12 +7,13 @@ import Card from './components/Card'
 import restaurantData from './data/restaurantData'
 
 function App() {
-  const restaurantElements = restaurantData.map((rest) => {
-    return <div>
-            <Card key={rest.id} rating={rest.rating} name={rest.name}
-            address={rest.adddress} website={rest.URL} foodType={rest.type_of_food}
-            reviewCount={rest.reviewCount} openSpots={rest.openSpots}/>
-    </div>
+  const restaurants = restaurantData.map((rest) => {
+    return (
+            <Card
+              key={rest.id}
+              rest = {rest}
+            />
+    )
   })
 
   return (
@@ -20,31 +21,9 @@ function App() {
       <Navbar />
       <Hero />
       <Main />
-      {restaurantElements}
-      {/* <Contact
-        img={img}
-        name="Lazy Fish"
-        phone="(240) 372-1234"
-        email="lazyfish@lazy.com"
-      />
-      <Contact
-        img="./images/lazyFish.png"
-        name="Summitra"
-        phone="(555) 555-1234"
-        email="summitra@summitra.com"
-      />
-      <Contact
-        img="./images/lazyFish.png"
-        name="McDonalds"
-        phone="(123) 555-1234"
-        email="mcdonalds@mcdonalds.com"
-      />
-      <Contact
-        img="./images/lazyFish.png"
-        name="Chipotle"
-        phone="(555) 123-1234"
-        email="chipotle@chipotle.com"
-      /> */}
+      <section className="restaurants">
+        {restaurants}
+      </section>
     </div>
   )
 }
