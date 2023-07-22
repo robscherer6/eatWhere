@@ -2,8 +2,7 @@ import Navbar from './components/Navbar'
 import Main from './components/Main'
 import Hero from './components/Hero'
 import Card from './components/Card'
-//import Contact from './components/Contact'
-//import img from './images/lazyFish.png'
+import Search from './components/Search'
 import restaurantData from './data/restaurantData'
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
       <Navbar />
       <Hero />
       <Main />
+      <Search />
       <section className="restaurants">
         {restaurants}
       </section>

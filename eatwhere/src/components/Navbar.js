@@ -1,5 +1,3 @@
-//import Logo from '../images/OM-logo.png'
-
 function Navbar() {
   return (
     <nav>
