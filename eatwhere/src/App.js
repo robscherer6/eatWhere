@@ -6,6 +6,7 @@ import Search from './components/Search'
 import restaurantData from './data/restaurantData'
 
 function App() {
+
   const restaurants = restaurantData.map((rest) => {
     return (
             <Card
@@ -24,6 +25,7 @@ function App() {
       <section className="restaurants">
         {restaurants}
       </section>
+
     </div>
   )
 }
