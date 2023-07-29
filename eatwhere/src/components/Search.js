@@ -1,19 +1,13 @@
+import React from 'react'
+
 function Search () {
-
-  const things = ['thing1', 'thing2']
-  const mapThings = things.map((thing) => {
-    return (
-      <p>
-        thing = {thing}
-      </p>
-
-    )
-  })
-
+  const [isOpenOnMonday, setIsOpenOnMonday] = React.useState("Yes")
+        
   function handleClick(e) {
     e.preventDefault();
-    things.push(`thing${things.length + 1}`)
-    console.log(things)
+    if (setIsOpenOnMonday("No")) {
+      setIsOpenOnMonday("Yes")
+    }
   }
 
   return (
@@ -21,9 +15,8 @@ function Search () {
       <form className="form">
           <input type="text" className="form-input" placeholder="Restaurant Name"/>
           <input type="text" className="form-input" placeholder="Distance"/>
-        <button className="form-button" onClick={handleClick}>Search</button>
+        <button className="form-button" onClick={handleClick}>{isOpenOnMonday}</button>
       </form>
-      {mapThings}
     </main>
   )
 }

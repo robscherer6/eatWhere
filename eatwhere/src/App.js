@@ -4,9 +4,11 @@ import Hero from './components/Hero'
 import Card from './components/Card'
 import Search from './components/Search'
 import restaurantData from './data/restaurantData'
+import React from 'react'
 
 function App() {
-
+  const [result, setIsOpenOnMonday] = React.useState("Yes");
+  console.log(result);
   const restaurants = restaurantData.map((rest) => {
     return (
             <Card
@@ -25,7 +27,6 @@ function App() {
       <section className="restaurants">
         {restaurants}
       </section>
-
     </div>
   )
 }
