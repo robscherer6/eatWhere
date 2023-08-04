@@ -7,8 +7,7 @@ import restaurantData from './data/restaurantData'
 import React from 'react'
 
 function App() {
-  const [result, setIsOpenOnMonday] = React.useState("Yes");
-  console.log(result);
+  //const [result, setIsOpenOnMonday] = React.useState("Yes");
   const restaurants = restaurantData.map((rest) => {
     return (
             <Card
