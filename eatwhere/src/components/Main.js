@@ -1,4 +1,4 @@
-function Main() {
+function Main(props) {
   const factors = ['Distance', 'Type of Food', 'Rating']
   return (
     <main>
