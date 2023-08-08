@@ -4,11 +4,11 @@ import Card from './Card'
 function Search (props) {
 
 
-  const [status, setStatus] = React.useState(false)
+  const [status, showRestaurants] = React.useState(false)
 
   function handleClick(e) {
     e.preventDefault();
-    setStatus(!status)
+    showRestaurants(!status)
     
     // setStatus((oldValue) => {
     //   if (oldValue === "Search") {
@@ -23,17 +23,21 @@ function Search (props) {
 
   return (
     <div className='container'>
+
       <main>
         <form className="form">
-            {/* <input type="text" className="form-input" placeholder="Restaurant Name"/>
-            <input type="text" className="form-input" placeholder="Distance"/> */}
-          <button className="form-button" onClick={handleClick}>{status}</button>
+    
+          <button className="form-button" onClick={handleClick}>{status ? <div className='restaurant-data'>
+            <Card />
+      </div> : <button>Login</button>}</button>
 
         </form>
       </main>
+
       <div className='restaurant-data'>
             <Card />
       </div>
+
     </div>
   )
 }
