@@ -28,16 +28,9 @@ function Search (props) {
         <form className="form">
     
           <button className="form-button" onClick={handleClick}>{status ? <div className='restaurant-data'>
-            <Card />
-      </div> : <button>Login</button>}</button>
-
+            <Card/> </div> : Search}Search</button>
         </form>
       </main>
-
-      <div className='restaurant-data'>
-            <Card />
-      </div>
-
     </div>
   )
 }
