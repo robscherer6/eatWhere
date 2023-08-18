@@ -17,6 +17,7 @@ function Search (props) {
     <div className='container'>
       <main>
         <form className="form">
+          <input type="text" name="name" className='form-input'></input>
           <button className="form-button" onClick={handleClick}>Search {status ? <div className='restaurant-data'>
             <Card/> </div> : ''}</button>
         </form>
