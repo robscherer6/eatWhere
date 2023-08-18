@@ -88,11 +88,12 @@ section {
 
 .card {
   color: #DEEBF8;
-  width: 175px;
+  width: 100px;
   font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  border: 1px solid white;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 5px;
 }
 
 .card-image {
@@ -103,7 +104,7 @@ section {
 .card-stats {
   display: flex;
   align-items: center;
-}
+} */
 
 .card--star {
   height: 14px;
@@ -112,7 +113,7 @@ section {
 .lazy-pic {
   width: 50%;
   border-radius: 9px;
-}
+} */
 
 .card-badge {
   color: black;
