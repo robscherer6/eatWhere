@@ -19,6 +19,7 @@ export const searchNearbyRestaurants = async (location, filters = {}) => {
   };
 
   const response = await fetch(`${BASE_URL}/places:searchNearby`, {
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
       "X-Goog-Api-Key": API_KEY,
@@ -45,10 +46,15 @@ export const geocodeLocation = async (locationString) => {
     throw new Error("Failed to geocode location");
   }
 
-  const data = response.json();
+  const data = await response.json();
+
+  console.log('Geocoding response:', data) // ← add this
+  console.log('Geocoding status:', data.status) // ← and this
+
   if (data.results.length === 0) {
     throw new Error("Location not found");
   }
 
   return data.results[0].geometry.location;
+
 };
