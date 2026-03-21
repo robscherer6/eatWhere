@@ -16,6 +16,7 @@ const RestaurantCard = ({ restaurant }) => {
 
   const name = displayName?.text;
   const isOpen = regularOpeningHours?.openNow;
+  // avoiding returning generic data, removing _, and keep it limited to two words
   const cuisineTypes = types
     ?.filter(
       (type) =>
