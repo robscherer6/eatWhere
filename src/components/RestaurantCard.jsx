@@ -1,8 +1,9 @@
+import { memo } from "react";
 import Card from "../components/shared/Card";
 import Button from "../components/shared/Button";
 import useRestaurants from "../hooks/useRestaurants";
 
-const RestaurantCard = ({ restaurant }) => {
+const RestaurantCard = memo(({ restaurant }) => {
   const { addFavorite, removeFavorite, isFavorite } = useRestaurants();
   const {
     id,
@@ -84,5 +85,8 @@ const RestaurantCard = ({ restaurant }) => {
       </div>
     </Card>
   );
-};
+});
+
+RestaurantCard.displayName = 'RestaurantCard'
+
 export default RestaurantCard;
