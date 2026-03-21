@@ -48,9 +48,6 @@ export const geocodeLocation = async (locationString) => {
 
   const data = await response.json();
 
-  console.log('Geocoding response:', data) // ← add this
-  console.log('Geocoding status:', data.status) // ← and this
-
   if (data.results.length === 0) {
     throw new Error("Location not found");
   }
