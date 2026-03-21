@@ -1,61 +1,43 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useReducer } from 'react'
+import restaurantReducer, { initialState } from './restaurantReducer'
 
-const RestaurantContext = createContext();
+const RestaurantContext = createContext()
 
 export const RestaurantProvider = ({ children }) => {
-  const [restaurants, setRestaurants] = useState([]);
-  // lazy initialization, calls once on mount (localstorage access is sync)
-  const [favorites, setFavorites] = useState(() => {
-    const saved = localStorage.getItem("eatWhere-favorites");
-    return saved ? JSON.parse(saved) : [];
-  });
-  const [filters, setFilters] = useState({
-    cuisine: "",
-    // google measures distance in meters (5000m ~ 3 mi)
-    distance: 5000,
-  });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [searchLocation, setSearchLocation] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem("eatWhere-favorites", JSON.stringify(favorites));
-  }, [favorites]);
+  const [state, dispatch] = useReducer(restaurantReducer, initialState)
 
   const addFavorite = (restaurant) => {
-    setFavorites([...favorites, restaurant]);
-  };
+    dispatch({ type: 'ADD_FAVORITE', payload: restaurant })
+  }
 
   const removeFavorite = (id) => {
-    setFavorites(favorites.filter((res) => res.id !== id));
-  };
+    dispatch({ type: 'REMOVE_FAVORITE', payload: id })
+  }
 
   const isFavorite = (id) => {
-    return favorites.some((res) => res.id === id);
-  };
+    return state.favorites.some(item => item.id === id)
+  }
 
   return (
-    <RestaurantContext.Provider
-      value={{
-        restaurants,
-        setRestaurants,
-        favorites,
-        filters,
-        setFilters,
-        loading,
-        setLoading,
-        error,
-        setError,
-        searchLocation,
-        setSearchLocation,
-        addFavorite,
-        removeFavorite,
-        isFavorite,
-      }}
-    >
+    <RestaurantContext.Provider value={{
+      restaurants: state.restaurants,
+      favorites: state.favorites,
+      filters: state.filters,
+      loading: state.loading,
+      error: state.error,
+      searchLocation: state.searchLocation,
+      setRestaurants: (restaurants) => dispatch({ type: 'SET_RESTAURANTS', payload: restaurants }),
+      setLoading: (loading) => dispatch({ type: 'SET_LOADING', payload: loading }),
+      setError: (error) => dispatch({ type: 'SET_ERROR', payload: error }),
+      setSearchLocation: (location) => dispatch({ type: 'SET_SEARCH_LOCATION', payload: location }),
+      setFilters: (filters) => dispatch({ type: 'SET_FILTERS', payload: filters }),
+      addFavorite,
+      removeFavorite,
+      isFavorite
+    }}>
       {children}
     </RestaurantContext.Provider>
-  );
-};
+  )
+}
 
-export default RestaurantContext;
+export default RestaurantContext
