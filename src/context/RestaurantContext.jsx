@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, useCallback } from 'react'
 import restaurantReducer, { initialState } from './restaurantReducer'
 
 const RestaurantContext = createContext()
@@ -6,17 +6,17 @@ const RestaurantContext = createContext()
 export const RestaurantProvider = ({ children }) => {
   const [state, dispatch] = useReducer(restaurantReducer, initialState)
 
-  const addFavorite = (restaurant) => {
+  const addFavorite = useCallback((restaurant) => {
     dispatch({ type: 'ADD_FAVORITE', payload: restaurant })
-  }
+  }, [])
 
-  const removeFavorite = (id) => {
+  const removeFavorite = useCallback((id) => {
     dispatch({ type: 'REMOVE_FAVORITE', payload: id })
-  }
+  }, [])
 
-  const isFavorite = (id) => {
+  const isFavorite = useCallback((id) => {
     return state.favorites.some(item => item.id === id)
-  }
+  }, [state.favorites])
 
   return (
     <RestaurantContext.Provider value={{
