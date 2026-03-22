@@ -17,7 +17,7 @@ const RestaurantCard = memo(({ restaurant }) => {
 
   const name = displayName?.text;
   const isOpen = regularOpeningHours?.openNow;
-  // avoiding returning generic data, removing _, and keep it limited to two words
+  // avoiding returning generic data, removing _, and keep it limited to two types
   const cuisineTypes = types
     ?.filter(
       (type) =>
@@ -87,6 +87,6 @@ const RestaurantCard = memo(({ restaurant }) => {
   );
 });
 
-RestaurantCard.displayName = 'RestaurantCard'
+RestaurantCard.displayName = "RestaurantCard";
 
 export default RestaurantCard;

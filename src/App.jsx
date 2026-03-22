@@ -2,8 +2,7 @@ import { lazy, Suspense } from "react";
 import { RestaurantProvider } from "./context/RestaurantContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-
-const HomePage = lazy(() => import("./pages/HomePage"));
+import HomePage from "./pages/HomePage"
 const SpinPage = lazy(() => import("./pages/SpinPage"));
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
 
